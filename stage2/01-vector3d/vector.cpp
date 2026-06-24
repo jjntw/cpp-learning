@@ -9,8 +9,12 @@ class Vector3D {
   public:
 	// Member initializer list constructors
 	Vector3D() : x{0.0}, y{0.0}, z{0.0} {}
-
 	Vector3D(double x, double y, double z) : x{x}, y{y}, z{z} {}
+
+	// Member getters
+	double getX() const { return x; }
+    double getY() const { return y; }
+    double getZ() const { return z; }
 
 	// Overload ops for vector sums, differences, and scalar multiplication
 	Vector3D operator+(const Vector3D &V) const {
@@ -50,4 +54,4 @@ class Vector3D {
 	}
 };
 
-int main() { return 0; }
+//int main() { return 0; }
