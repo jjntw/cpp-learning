@@ -19,7 +19,7 @@ void tung_tung_sort(const size_t size) {
     using Tung = std::priority_queue<Vector3D, std::vector<Vector3D>, Sahur>;
     std::vector<Vector3D> tung; tung.reserve(size);
     
-    Tung tungtungSahur(Sahur{}, std::move(tung));
+    Tung tungtung(Sahur{}, std::move(tung));
     std::vector<Vector3D> sortSpace(size);
 
     for (size_t i = 0; i < size; i++) {
@@ -40,7 +40,7 @@ void tung_tung_sort(const size_t size) {
             }
 
             Vector3D tung3{t1, t2, t3};
-            tungtungSahur.push(tung3);
+            tungtung.push(tung3);
             sortSpace[i] = tung3;
             break;
         }
