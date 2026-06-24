@@ -18,7 +18,7 @@ struct Sahur {
 void tung_tung_sort(const size_t size) {
     using Tung = std::priority_queue<Vector3D, std::vector<Vector3D>, Sahur>;
     std::vector<Vector3D> tung; tung.reserve(size);
-    
+
     Tung tungtung(Sahur{}, std::move(tung));
     std::vector<Vector3D> sortSpace(size);
 
@@ -53,9 +53,11 @@ void tung_tung_sort(const size_t size) {
             std::string(), [](std::string s, Vector3D& tung3) {
             return s + (s.empty() ? "" : ", ")
                      + "("
-                     + std::format("{:.2f}", std::floor((tung3.getX() * 100.0) / 100.0)) + ", "
-                     + std::format("{:.2f}", std::floor((tung3.getY() * 100.0) / 100.0)) + ", "
-                     + std::format("{:.2f}", std::floor((tung3.getZ() * 100.0) / 100.0))
+                     + std::format("{:.2f}, {:.2f}, {:.2f}",
+                            std::floor((tung3.getX() * 100.0) / 100.0),
+                            std::floor((tung3.getY() * 100.0) / 100.0),
+                            std::floor((tung3.getZ() * 100.0) / 100.0)
+                     )
                      + ")";
             })
     << "]"
